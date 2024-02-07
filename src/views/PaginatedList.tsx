@@ -8,13 +8,17 @@ import {
   ActivityIndicator
 } from 'react-native'
 
+interface ListItem {
+  number: string;
+  id: string;
+}
 
-const INITIAL_LOAD = 30;
-const PAGE_SIZE = 20;
+const INITIAL_LOAD: number = 30;
+const PAGE_SIZE: number = 20;
 
-export default () => {
+const MyComponent: React.FC = () => {
  
-  const fetchMoreListItems = ({ lastIndex }) => {
+  const fetchMoreListItems = ({ lastIndex }: { lastIndex: number }): Promise<ListItem[]> => {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve([
@@ -47,7 +51,7 @@ export default () => {
           }
         }}
         data={data}
-        keyExtractor={item => item.id}
+        // keyExtractor={item => item.id}
         renderItem={({ item }) => {
           return <Item item={item} />
         }}
@@ -59,4 +63,4 @@ export default () => {
   )
 }
 
-
+export default MyComponent;
