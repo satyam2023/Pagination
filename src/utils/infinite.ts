@@ -1,8 +1,8 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
-type LoadFunction = (params: { lastIndex: number; lastItem: any }) => Promise<any[]>;
 
-const useInfiniteScroll = (load: LoadFunction) => {
+
+const useInfiniteScroll = (load: Function) => {
     const [isFetching, setIsFetching] = useState(true);
     const [data, setData] = useState<any[]>([]);
 
