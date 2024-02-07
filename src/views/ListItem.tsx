@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList, View, Text, ActivityIndicator } from 'react-native';
-import fetchBooks from '../services/API/network';
+import fetchBooks from '../services/SendingData/network';
 import Data from '../models/Data';
 import { fetchMore } from '../utils/helper';
 

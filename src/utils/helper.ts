@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fetchBooks from "../services/API/network";
+import fetchBooks from "../services/SendingData/network";
 export const fetchMore = async (currentPage:number,setCurrentPage:Function,setBooks:Function) => {
     const nextPage = currentPage + 1;
     const newData = await fetchBooks(nextPage);
