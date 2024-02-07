@@ -16,7 +16,7 @@ interface ListItem {
 const INITIAL_LOAD: number = 30;
 const PAGE_SIZE: number = 20;
 
-const MyComponent: React.FC = () => {
+const PaginationList: React.FC = () => {
  
   const fetchMoreListItems = ({ lastIndex }: { lastIndex: number }): Promise<ListItem[]> => {
     return new Promise(resolve => {
@@ -63,4 +63,4 @@ const MyComponent: React.FC = () => {
   )
 }
 
-export default MyComponent;
+export default PaginationList;
