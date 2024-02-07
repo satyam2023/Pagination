@@ -8,17 +8,15 @@ import {
   ActivityIndicator
 } from 'react-native'
 
-interface ListItem {
-  number: string;
-  id: string;
-}
 
-const INITIAL_LOAD: number = 30;
-const PAGE_SIZE: number = 20;
 
-const PaginationList: React.FC = () => {
+const INITIAL_LOAD= 30;
+const PAGE_SIZE = 20;
+
+const MyComponent: React.FC = () => {
  
-  const fetchMoreListItems = ({ lastIndex }: { lastIndex: number }): Promise<ListItem[]> => {
+  const fetchMoreListItems = ({ lastIndex }: { lastIndex: number }) => {
+
     return new Promise(resolve => {
       setTimeout(() => {
         resolve([
@@ -47,13 +45,13 @@ const PaginationList: React.FC = () => {
         onEndReachedThreshold={5}
         onEndReached={() => {
           if (!isFetching) {
-            setIsFetching(true)
+           (setIsFetching as (value:boolean) =>void)(true);
           }
         }}
-        data={data}
+        data={data as []}
         // keyExtractor={item => item.id}
         renderItem={({ item }) => {
-          return <Item item={item} />
+          return <Item item={item} props={undefined} />
         }}
       />
       {isFetching && (
@@ -63,4 +61,4 @@ const PaginationList: React.FC = () => {
   )
 }
 
-export default PaginationList;
+export default MyComponent;
