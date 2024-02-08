@@ -13,7 +13,7 @@ import {
 const INITIAL_LOAD= 30;
 const PAGE_SIZE = 20;
 
-const MyComponent: React.FC = () => {
+const Component: React.FC = () => {
  
   const fetchMoreListItems = ({ lastIndex }: { lastIndex: number }) => {
 
@@ -61,4 +61,4 @@ const MyComponent: React.FC = () => {
   )
 }
 
-export default MyComponent;
+export default Component;
